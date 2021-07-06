@@ -1,21 +1,20 @@
 @import "../../styles/global-css-settings.scss";
 
 @mixin shine-animation() {
-  overflow: hidden;
-  &::before {
-    display: inline-block;
-    content:"";
-    opacity: 0.1;
-    background-image: linear-gradient(90deg, transparent 0%, var(--placeholder-color) 30%, var(--placeholder-color) 70%, transparent 100%);
-    width: 300%;
-    height: 300%;
-    margin-bottom: 20px;
-    animation-duration: 1.2s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-name: shine;
-    animation-timing-function: $expand-animation-timing;
-  }
+  @include theme-prop(background, disabled-background-color); // should be replaced with all grey color
+  display: inline-block;
+  content:"";
+  background-repeat: no-repeat;
+  background-image:
+          linear-gradient(90deg, transparent 0%, rgba(var(--placeholder-color), 0.1) 30%, rgba(var(--placeholder-color),0.1) 70%, transparent 100%);
+  background-size: 300% 300%;
+  margin-bottom: 20px;
+  animation-duration: 11.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shine2;
+  animation-timing-function: $expand-animation-timing;
+
   @keyframes shine {
     0% {
       margin-left: -500%;
@@ -28,11 +27,11 @@
   // the better options which does not work
   @keyframes shine2 {
     0% {
-      background-position: 500px 0;
+      background-position: 500% 0;
     }
 
     100% {
-      background-position: -500px 0;
+      background-position: -500% 0;
     }
   }
 }
