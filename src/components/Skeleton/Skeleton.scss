@@ -1,4 +1,5 @@
 @import "../../styles/global-css-settings.scss";
+@import "../../styles/typography.scss";
 
 @mixin shine-animation() {
   display: inline-block;
@@ -50,25 +51,29 @@
   &_text {
     width: 162px;
     @include skeleton;
-
-    &--h1, &--h2, &--h3 {
-      height: 24px;
+    &--h1 {
+      height: $h1-empty-state-height
+    }
+    &--h2 {
+      height: $h2-empty-state-height;
+    }
+    &--h2 {
+      height: $h3-empty-state-height;
     }
     &--h4 {
-      height: 21px;
+      height: $h4-empty-state-height;
     }
-    &--h5, &--h6, &--costume {
-      height: 16px;
+    &--h5 {
+      height: $h5-empty-state-height;
     }
-  }
-
-  &--adjust-child {
-    .monday-style-skeleton_rectangle, .monday-style-skeleton_circle, .monday-style-skeleton_text {
-      height: auto;
-      width: initial;
+    &--h6 {
+      height: $h6-empty-state-height;
     }
-    .monday-style-skeleton_hidden-child {
-      visibility: hidden;
+    &--h6 {
+      height: $p-empty-state-height;
+    }
+    &--small, &--custom {
+      height: $small-empty-state-height;
     }
   }
 }

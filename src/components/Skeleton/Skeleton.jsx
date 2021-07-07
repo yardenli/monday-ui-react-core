@@ -6,25 +6,20 @@ import {
   SKELETON_SIZES,
   SKELETON_ALLOWED_TYPES,
   SKELETON_ALLOWED_SIZES,
-  SKELETON_COSTUME_SIZE
+  SKELETON_CUSTOM_SIZE
 } from "./SkeletonConstants";
 import "./Skeleton.scss";
 import { BEMClass } from "../../helpers/bem-helper";
 
 const SKELETON_CSS_BASE_CLASS = "monday-style-skeleton";
-const HIDDEN_CHILD_CSS_ELEMENT = "hidden-child";
 const bemHelper = BEMClass(SKELETON_CSS_BASE_CLASS);
 
-export const Skeleton = ({ type, size, className, width, height, children }) => {
+export const Skeleton = ({ type, size, className, width, height }) => {
   const skeletonType = SKELETON_ALLOWED_TYPES.indexOf(type) > -1 ? type : SKELETON_TYPES.RECTANGLE;
   const typeDescription = skeletonType.toUpperCase();
-  const skeletonSize = SKELETON_ALLOWED_SIZES[typeDescription].indexOf(size) > -1 ? size : SKELETON_COSTUME_SIZE;
+  const skeletonSize = SKELETON_ALLOWED_SIZES[typeDescription].indexOf(size) > -1 ? size : SKELETON_CUSTOM_SIZE;
   return (
-    <div
-      className={cx(SKELETON_CSS_BASE_CLASS, {
-        [bemHelper({ state: "adjust-child" })]: !isNil(children)
-      })}
-    >
+    <div className={SKELETON_CSS_BASE_CLASS}>
       <div
         className={cx(
           bemHelper({ element: skeletonType }),
@@ -32,13 +27,7 @@ export const Skeleton = ({ type, size, className, width, height, children }) => 
           className
         )}
         style={{ width, height }}
-      >
-        {children ? (
-          <div className={bemHelper({ element: HIDDEN_CHILD_CSS_ELEMENT })} aria-hidden="true">
-            {children}
-          </div>
-        ) : null}
-      </div>
+      />
     </div>
   );
 };
@@ -51,18 +40,18 @@ Skeleton.propTypes = {
       ...SKELETON_ALLOWED_SIZES.CIRCLE,
       ...SKELETON_ALLOWED_SIZES.TEXT
     ])
-  ).isRequired,
+  ),
   className: PropTypes.string,
   width: PropTypes.number,
-  height: PropTypes.number,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+  height: PropTypes.number
 };
 
 Skeleton.defaultProps = {
+  type: SKELETON_TYPES.RECTANGLE,
+  size: SKELETON_SIZES.CUSTOM,
   className: "",
   width: undefined,
-  height: undefined,
-  children: null
+  height: undefined
 };
 
 Skeleton.types = SKELETON_TYPES;
