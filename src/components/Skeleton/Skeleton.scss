@@ -4,9 +4,7 @@
   display: inline-block;
   content:"";
   background-repeat: no-repeat;
-  $a1: var(--placeholder-color);
-  $x: rgba($a1, 0.1);
-  background-image: linear-gradient(90deg, transparent 0%, $x 30%, $x 70%, transparent 100%);
+  background-image: linear-gradient(90deg, transparent 0%, var(--placeholder-color-with-opacity) 30%, var(--placeholder-color-with-opacity) 70%, transparent 100%);
   background-size: 300% 300%;
   margin-bottom: 20px;
   animation-duration: 1.5s;
