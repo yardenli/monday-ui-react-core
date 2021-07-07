@@ -1,37 +1,27 @@
 @import "../../styles/global-css-settings.scss";
 
 @mixin shine-animation() {
-  @include theme-prop(background, disabled-background-color); // should be replaced with all grey color
   display: inline-block;
   content:"";
   background-repeat: no-repeat;
-  background-image:
-          linear-gradient(90deg, transparent 0%, rgba(var(--placeholder-color), 0.1) 30%, rgba(var(--placeholder-color),0.1) 70%, transparent 100%);
+  $a1: var(--placeholder-color);
+  $x: rgba($a1, 0.1);
+  background-image: linear-gradient(90deg, transparent 0%, $x 30%, $x 70%, transparent 100%);
   background-size: 300% 300%;
   margin-bottom: 20px;
-  animation-duration: 11.2s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
-  animation-name: shine2;
+  animation-name: shine;
   animation-timing-function: $expand-animation-timing;
 
   @keyframes shine {
     0% {
-      margin-left: -500%;
-    }
-    100% {
-      margin-left: 500%;
-    }
-  }
-
-  // the better options which does not work
-  @keyframes shine2 {
-    0% {
-      background-position: 500% 0;
+      background-position: 400% 0;
     }
 
     100% {
-      background-position: -500% 0;
+      background-position: -400% 0;
     }
   }
 }
