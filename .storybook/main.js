@@ -49,11 +49,9 @@ const buildConfig = config => {
 };
 
 module.exports = {
-  stories: ["../src/**/*.stories.(js|mdx)"],
+  stories: ["../src/**/*.stories.mdx"],
   webpackFinal: async config => {
     return buildConfig(config);
   },
-  addons: ["@storybook/addon-knobs", "storybook-addon-themes", "@storybook/addon-a11y"]
+  addons: ["@storybook/addon-knobs", "storybook-addon-themes", "@storybook/addon-a11y", "@storybook/addon-docs"]
 };
-
-//"./colors/colors.stories.js", "./typography/typography.stories.mdx
