@@ -1,4 +1,4 @@
-import { addParameters, configure } from "@storybook/react";
+import { addParameters } from "@storybook/react";
 import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks";
 
 import { loadFoundationsStories } from "../src/general-stories/foundations-stories";
@@ -16,5 +16,3 @@ addParameters({
 });
 
 const storiesLoaderFunction = () => [...loadFoundationsStories()];
-
-configure(storiesLoaderFunction, module);
