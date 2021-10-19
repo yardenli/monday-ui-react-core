@@ -130,9 +130,5 @@ export const OnColorButtonState = () => {
 export default {
   title: "Components/Button",
   component: Button,
-  parameters: {
-    docs: {
-      page: mdx
-    }
-  }
+  parameters: mdx.parameters
 };

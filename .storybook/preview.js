@@ -17,12 +17,6 @@ import {
 addParameters({
   docs: {
     ...parameters.docs,
-    container: ({ children, context }) => (
-      <DocsContainer context={context}>
-        {children}
-        {<DocFooter />}
-      </DocsContainer>
-    ),
     page: DocsPage,
     components: {
       h1: ComponentName,
@@ -37,12 +31,6 @@ addParameters({
     }
   },
   viewMode: "docs",
-  previewTabs: {
-    "storybook/docs/panel": {
-      index: -1
-    },
-    canvas: { title: "Sandbox" }
-  },
   themes: [
     { name: "Light", class: "light-app-them", color: "#ffffff", default: true },
     { name: "Dark", class: "dark-app-theme", color: "#1C1F3B" },

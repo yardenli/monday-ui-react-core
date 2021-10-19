@@ -1,6 +1,21 @@
-@import "../constants/colors.json";
 @import "./global-css-settings.scss";
 @import "~monday-ui-style/dist/index.min.css";
+
+$basic_blue: #0085FF;
+$snow_white: #ffffff;
+$dark_blue:#0071D9;
+$higlight: #cce9ff;
+$success: #00CA72;
+$error: #E44258;
+$private: #f65f7c;
+$purple: #A358DF;
+$ui_grey: #e6e9ef;
+$asphalt: #676879;
+$link_color: #1F76C2;
+$mud_black: #323338;
+$surface: #292f4c;
+$wolf_gray: #c5c7d0;
+$riverstone_gray: #f5f6f8;
 
 $theme: (
   "primary-color": $basic_blue,
