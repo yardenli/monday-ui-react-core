@@ -78,7 +78,7 @@ function getPublishedComponents(dirPath = "") {
 }
 
 function exposeIcons(dirPath) {
-  const iconsPath = "src/components/Icon/Icons/components";
+  const iconsPath = "./src/components/Icon/Icons/components";
   const directoryPath = path.join(dirPath, iconsPath);
   const filesObject = {};
   const files = fs.readdirSync(directoryPath);
