@@ -12,7 +12,7 @@ import {
   RelatedComponents,
   DocFooter,
   ComponentStory
-} from "../src/storybook-components";
+} from "../src/components";
 
 addParameters({
   docs: {

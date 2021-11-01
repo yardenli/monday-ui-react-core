@@ -3,7 +3,7 @@ import Button from "../Button";
 import { Check, Calendar, Add, Remove } from "../../Icon/Icons";
 import mdx from "./button.stories.mdx";
 import "./button.stories.scss";
-import { MultipleStoryElementsWrapper } from "../../../storybook-components/multiple-story-elements-wrapper/multiple-story-elements-wrapper";
+import { MultipleStoryElementsWrapper } from "../../../components/multiple-story-elements-wrapper/multiple-story-elements-wrapper";
 
 const ButtonTemplate = args => <Button {...args} />;
 
